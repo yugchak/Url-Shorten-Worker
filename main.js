@@ -98,6 +98,30 @@ function copyurl(id, attr) {
   }
 }
 
+function copytext(gettext) {
+  let target = null;
+
+  if (gettext == "") {
+    alert("Error Text!")
+    return
+  } else {
+    target = gettext
+  }
+  
+  try {
+    let range = document.createRange();
+    range.selectNode(target);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    // console.log('Copy success')
+    alert("Copy success")
+  } catch (e) {
+    alert("Copy error")
+  }
+}
+
 function loadUrlList() {
   // 清空列表
   let urlList = document.querySelector("#urlList")
