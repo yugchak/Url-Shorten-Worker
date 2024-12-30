@@ -167,6 +167,15 @@ function addUrlToList(shortUrl, longUrl) {
   qrcodeBtn.setAttribute('id', 'qrcodeBtn-' + shortUrl)
   qrcodeBtn.innerText = "QR"
   keyItem.appendChild(qrcodeBtn)
+
+  // 显示复制按钮
+  let copyBtn = document.createElement('button')  
+  qrcodeBtn.setAttribute('type', 'button')
+  qrcodeBtn.classList.add("btn", "btn-primary")
+  qrcodeBtn.setAttribute('onclick', 'copyurl(\"' + shortUrl + '\")')
+  qrcodeBtn.setAttribute('id', 'copyurl-' + shortUrl)
+  qrcodeBtn.innerText = "COPY"
+  keyItem.appendChild(copyBtn)
   
   child.appendChild(keyItem)
 
