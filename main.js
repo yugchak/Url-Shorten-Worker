@@ -108,7 +108,8 @@ function copytext(shortUrl) {
     alert("Error Text!");
     return
   } else {
-    target = window.location.protocol + "//" + window.location.host + "/" + shortUrl;
+    target = document.createElement('div');
+    target.innerText = window.location.protocol + "//" + window.location.host + "/" + shortUrl;
     console.log(target);
   }
   
