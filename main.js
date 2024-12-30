@@ -79,8 +79,7 @@ function copyurl(id, attr) {
     console.log('1')
   } else {
     target = document.querySelector('#' + id);
-    console.log('1');
-    alert(target);
+    console.log(target);
   }
 
   try {
@@ -118,7 +117,6 @@ function copytext(shortUrl) {
     range.selectNode(target);
     window.getSelection().removeAllRanges();
     window.getSelection().addRange(range);
-    document.execCommand('copy');
     window.getSelection().removeAllRanges();
     // console.log('Copy success')
     alert("Copy success");
