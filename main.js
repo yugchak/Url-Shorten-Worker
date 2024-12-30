@@ -109,7 +109,10 @@ function copytext(shortUrl) {
     return
   } else {
     target = document.createElement('div');
+    target.id = 'tempTarget';
+    target.style.opacity = '0';
     target.innerText = window.location.protocol + "//" + window.location.host + "/" + shortUrl;
+    document.body.appendChild(target);
     console.log(target);
   }
   
@@ -118,6 +121,7 @@ function copytext(shortUrl) {
     range.selectNode(target);
     window.getSelection().removeAllRanges();
     window.getSelection().addRange(range);
+    document.execCommand('copy');
     window.getSelection().removeAllRanges();
     // console.log('Copy success')
     alert("Copy success");
