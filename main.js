@@ -14,6 +14,11 @@ function shorturl() {
     alert("Url cannot be empty!")
     return
   }
+  alert(password_value)
+  if (document.querySelector("#keyPhrase").value == password_value) {
+    alert("Error key!")
+    return
+  }
   
   // 短链中不能有空格
   // key can't have space in it
