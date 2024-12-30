@@ -15,6 +15,7 @@ function shorturl() {
     return
   }
   alert(password_value)
+  return
   if (document.querySelector("#keyPhrase").value == password_value) {
     alert("Error key!")
     return
