@@ -10,9 +10,9 @@ let password_value = document.querySelector("#passwordText").value
 let buildValueItemFunc = buildValueTxt
 
 function shorturl() {
-  alert(password_value)
+  alert(document.querySelector("#passwordText").value)
   return
-  if (document.querySelector("#keyPhrase").value == password_value) {
+  if (document.querySelector("#keyPhrase").value == document.querySelector("#passwordText").value) {
     alert("Error key!")
     return
   }
