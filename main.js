@@ -98,14 +98,14 @@ function copyurl(id, attr) {
   }
 }
 
-function copytext(gettext) {
+function copytext(shortUrl) {
   let target = null;
 
-  if (gettext == "") {
+  if (shortUrl == "") {
     alert("Error Text!")
     return
   } else {
-    target = window.location.host + "/" + gettext
+    target = window.location.protocol + "//" + window.location.host + "/" + shortUrl
     console.log(target)
   }
   
@@ -119,6 +119,7 @@ function copytext(gettext) {
     // console.log('Copy success')
     alert("Copy success")
   } catch (e) {
+    console.log(e)
     alert("Copy error")
   }
 }
