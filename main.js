@@ -76,21 +76,18 @@ function copyurl(id, attr) {
       target.innerText = attr;
     }
     document.body.appendChild(target);
-    console.log('1')
   } else {
     target = document.querySelector('#' + id);
-    console.log(target);
   }
 
   try {
     let range = document.createRange();
-    console.log(range)
     range.selectNode(target);
     window.getSelection().removeAllRanges();
     window.getSelection().addRange(range);
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
-    console.log('Copy success')
+    //console.log('Copy success')
   } catch (e) {
     console.log('Copy error');
   }
@@ -113,7 +110,6 @@ function copytext(shortUrl) {
     target.style.opacity = '0';
     target.innerText = window.location.protocol + "//" + window.location.host + "/" + shortUrl;
     document.body.appendChild(target);
-    console.log(target);
   }
   
   try {
@@ -125,8 +121,8 @@ function copytext(shortUrl) {
     window.getSelection().removeAllRanges();
     // console.log('Copy success')
     alert("Copy success");
+    target.parentElement.removeChild(target);
   } catch (e) {
-    console.log(e);
     alert("Copy error");
   }
 }
