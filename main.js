@@ -10,14 +10,14 @@ let password_value = document.querySelector("#passwordText").value
 let buildValueItemFunc = buildValueTxt
 
 function shorturl() {
-  if (document.querySelector("#longURL").value == "") {
-    alert("Url cannot be empty!")
-    return
-  }
   alert(password_value)
   return
   if (document.querySelector("#keyPhrase").value == password_value) {
     alert("Error key!")
+    return
+  }
+  if (document.querySelector("#longURL").value == "") {
+    alert("Url cannot be empty!")
     return
   }
   
