@@ -105,7 +105,8 @@ function copytext(gettext) {
     alert("Error Text!")
     return
   } else {
-    target = gettext
+    target = window.location.host + "/" + gettext
+    console.log(target)
   }
   
   try {
@@ -196,8 +197,8 @@ function addUrlToList(shortUrl, longUrl) {
   let copyBtn = document.createElement('button')  
   copyBtn.setAttribute('type', 'button')
   copyBtn.classList.add("btn", "btn-primary")
-  copyBtn.setAttribute('onclick', 'copyurl(\"' + shortUrl + '\")')
-  copyBtn.setAttribute('id', 'copyurl-' + shortUrl)
+  copyBtn.setAttribute('onclick', 'copytext(\"' + shortUrl + '\")')
+  copyBtn.setAttribute('id', 'copytext-' + shortUrl)
   copyBtn.innerText = "COPY"
   keyItem.appendChild(copyBtn)
   
