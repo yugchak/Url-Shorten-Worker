@@ -84,12 +84,13 @@ function copyurl(id, attr) {
 
   try {
     let range = document.createRange();
+    console.log(range)
     range.selectNode(target);
     window.getSelection().removeAllRanges();
     window.getSelection().addRange(range);
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
-    // console.log('Copy success')
+    console.log('Copy success')
   } catch (e) {
     console.log('Copy error');
   }
